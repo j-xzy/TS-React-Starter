@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    "removeComments": true,
+    "moduleResolution": "node",
+    "strict": true,
+    "noImplicitAny": true,
+    "declaration": false,
+    "experimentalDecorators": true,
+    "rootDir": "./src",
+    "module": "esnext",
+    "target": "esnext",
+    "noUnusedLocals": true,
+    "allowJs": true,
+    "noUnusedParameters": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "lib": [
+      "es6",
+      "es2016.array.include",
+      "dom"
+    ],
+    "types": [
+      "react",
+      "react-dom",
+      "node"
+    ],
+    "emitDecoratorMetadata": true,
+    "jsx": "react",
+    "typeRoots": [
+      "./src/interface",
+      "./node_modules/@types"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "./src",
+    "./test"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

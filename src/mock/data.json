@@ -1,0 +1,12 @@
+{
+  "/hello/{name}": {
+    "get": {
+      "params": {
+        "name": "sint ut"
+      },
+      "response": {
+        "text": "fugiat dolor"
+      }
+    }
+  }
+}
