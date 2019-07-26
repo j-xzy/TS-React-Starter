@@ -77,7 +77,7 @@ export const config = {
 };
 ```
 
-之后，请求自动走Mock。
+之后，请求自动走Mock
 
 [更多Mock详情查看](https://github.com/whj1995/ts-faker/tree/master/test)
 

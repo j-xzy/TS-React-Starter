@@ -1,5 +1,5 @@
 {
-  "name": "ts-react-demo",
+  "name": "ts-react-starter",
   "version": "0.0.0",
   "scripts": {
     "start": "node ./build/devServer.js",
