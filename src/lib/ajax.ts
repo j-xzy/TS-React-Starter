@@ -100,10 +100,12 @@ type IExistParams<T extends keyof IApi, P extends IHttpMethod> = {
   [k in IExistParamsKeys<T, P>]: IApi[T][P][k]
 };
 
-type IGetParams<T extends keyof IApi> = IExistParams<T, 'get'> & RequestInit;
-type IPostParams<T extends keyof IApi> = IExistParams<T, 'post'> & RequestInit;
-type IPutParams<T extends keyof IApi> = IExistParams<T, 'put'> & RequestInit;
-type IDeleteParams<T extends keyof IApi> = IExistParams<T, 'delete'> & RequestInit;
+type IOmitRequestInit = Omit<RequestInit, 'body' | 'method'>;
+
+type IGetParams<T extends keyof IApi> = IExistParams<T, 'get'> & IOmitRequestInit;
+type IPostParams<T extends keyof IApi> = IExistParams<T, 'post'> & IOmitRequestInit;
+type IPutParams<T extends keyof IApi> = IExistParams<T, 'put'> & IOmitRequestInit;
+type IDeleteParams<T extends keyof IApi> = IExistParams<T, 'delete'> & IOmitRequestInit;
 
 type IGetReponse<T extends IGetUrl> = Promise<IApi[T]['get']['response']>;
 type IPostReponse<T extends IPostUrl> = Promise<IApi[T]['post']['response']>;
