@@ -57,6 +57,38 @@ describe('lib.ajax', () => {
       }
     })).toBe('/user?id=123');
 
+    expect(normalizeUrl('/user?id', {
+      querys: {
+        id: null as any
+      }
+    })).toBe('/user');
+
+    expect(normalizeUrl('/user?id', {
+      querys: {
+        id: undefined as any
+      }
+    })).toBe('/user');
+
+    expect(normalizeUrl('/user?id', {
+      querys: {
+        id: ''
+      }
+    })).toBe('/user');
+
+    expect(normalizeUrl('/user?id', {
+      querys: {
+        id: '',
+        name: null as any
+      }
+    })).toBe('/user');
+
+    expect(normalizeUrl('/user?id&name', {
+      querys: {
+        id: undefined as any,
+        name: 'xxx'
+      }
+    })).toBe('/user?name=xxx');
+
     expect(normalizeUrl('/user', {
       querys: {
         id: '123',

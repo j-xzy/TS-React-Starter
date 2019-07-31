@@ -58,7 +58,7 @@ export function normalizeUrl(url: string, p: INormalizeUrlParams) {
     query = '?';
     for (const k in p.querys) {
       if (p.querys.hasOwnProperty(k)) {
-        query += `${k}=${p.querys[k]}&`;
+        p.querys[k] && (query += `${k}=${p.querys[k]}&`);
       }
     }
     query = query.slice(0, query.length - 1);
