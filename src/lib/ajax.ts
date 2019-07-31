@@ -1,16 +1,16 @@
-export async function Get<T extends IGetUrl>(urlPattern: T, params: IGetParams<T>) {
+export async function Get<T extends IGetUrl>(urlPattern: T, params: IGetParams<T> = {} as any) {
   return await adFetch<Promise<IGetReponse<T>>>(urlPattern, 'get', params);
 }
 
-export async function Post<T extends IPostUrl>(urlPattern: T, params: IPostParams<T>) {
+export async function Post<T extends IPostUrl>(urlPattern: T, params: IPostParams<T> = {} as any) {
   return await adFetch<Promise<IPostReponse<T>>>(urlPattern, 'post', params);
 }
 
-export async function Put<T extends IPutUrl>(urlPattern: T, params: IPutParams<T>) {
+export async function Put<T extends IPutUrl>(urlPattern: T, params: IPutParams<T> = {} as any) {
   return await adFetch<Promise<IPutReponse<T>>>(urlPattern, 'put', params);
 }
 
-export async function Delete<T extends IDeleteUrl>(urlPattern: T, params: IDeleteParams<T>) {
+export async function Delete<T extends IDeleteUrl>(urlPattern: T, params: IDeleteParams<T> = {} as any) {
   return await adFetch<Promise<IDeleteReponse<T>>>(urlPattern, 'delete', params);
 }
 
