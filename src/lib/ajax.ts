@@ -1,17 +1,17 @@
 export async function Get<T extends IGetUrl>(urlPattern: T, params: IGetParams<T>) {
-  return await adFetch<IGetReponse<T>>(urlPattern, 'get', params);
+  return await adFetch<Promise<IGetReponse<T>>>(urlPattern, 'get', params);
 }
 
 export async function Post<T extends IPostUrl>(urlPattern: T, params: IPostParams<T>) {
-  return await adFetch<IPostReponse<T>>(urlPattern, 'post', params);
+  return await adFetch<Promise<IPostReponse<T>>>(urlPattern, 'post', params);
 }
 
 export async function Put<T extends IPutUrl>(urlPattern: T, params: IPutParams<T>) {
-  return await adFetch<IPutReponse<T>>(urlPattern, 'put', params);
+  return await adFetch<Promise<IPutReponse<T>>>(urlPattern, 'put', params);
 }
 
 export async function Delete<T extends IDeleteUrl>(urlPattern: T, params: IDeleteParams<T>) {
-  return await adFetch<IDeleteReponse<T>>(urlPattern, 'delete', params);
+  return await adFetch<Promise<IDeleteReponse<T>>>(urlPattern, 'delete', params);
 }
 
 export async function adFetch<T>(urlPattern: string, method: IHttpMethod, params: any): Promise<T> {
@@ -24,7 +24,11 @@ export async function adFetch<T>(urlPattern: string, method: IHttpMethod, params
     }
   }
 
-  const url = window.config.host + normalizeUrl(urlPattern, params as any);
+  let url = normalizeUrl(urlPattern, params as any);
+  if (!/^https?:\/\//.test(url)) {
+    url = window.config.host + url;
+  }
+
   return await fetch(url, {
     method,
     ...params
@@ -107,8 +111,8 @@ type IPostParams<T extends keyof IApi> = IExistParams<T, 'post'> & IOmitRequestI
 type IPutParams<T extends keyof IApi> = IExistParams<T, 'put'> & IOmitRequestInit;
 type IDeleteParams<T extends keyof IApi> = IExistParams<T, 'delete'> & IOmitRequestInit;
 
-type IGetReponse<T extends IGetUrl> = Promise<IApi[T]['get']['response']>;
-type IPostReponse<T extends IPostUrl> = Promise<IApi[T]['post']['response']>;
-type IPutReponse<T extends IPutUrl> = Promise<IApi[T]['put']['response']>;
-type IDeleteReponse<T extends IDeleteUrl> = Promise<IApi[T]['delete']['response']>;
+type IGetReponse<T extends IGetUrl> = IApi[T]['get']['response'];
+type IPostReponse<T extends IPostUrl> = IApi[T]['post']['response'];
+type IPutReponse<T extends IPutUrl> = IApi[T]['put']['response'];
+type IDeleteReponse<T extends IDeleteUrl> = IApi[T]['delete']['response'];
 // #endregion
