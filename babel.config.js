@@ -6,5 +6,8 @@ module.exports = {
     ],
     '@babel/preset-typescript',
     '@babel/preset-react'
+  ],
+  plugins: [
+    '@babel/proposal-class-properties'
   ]
 };
