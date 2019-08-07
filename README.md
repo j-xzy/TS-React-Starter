@@ -56,14 +56,9 @@ interface IApi {
 
 此时*window.Get*方法自动约束了*hello/{name}*接口，包括url地址、请求参数、Response等
 
-``` ts
-// 任意文件下
-const { text } = await window.Get('/hello/{name}', {
-    params: {
-      name: 'foo'
-    }
-  });
-```
+![](https://raw.githubusercontent.com/whj1995/images-host/master/%E6%89%B9%E6%B3%A8%202019-08-07%20104712.png)
+
+![](https://raw.githubusercontent.com/whj1995/images-host/master/%E6%89%B9%E6%B3%A8%202019-08-07%20104941.png)
 
 ### 如何无痛感的Mock数据
 
