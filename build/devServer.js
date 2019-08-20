@@ -4,9 +4,9 @@ const fs = require('fs');
 const path = require('path');
 const compiler = require('webpack')(require('./webpack/webpack.dev'));
 const app = express();
-const mock = require('./script/mock');
+const { watchMock } = require('./script/mock');
 
-mock();
+watchMock();
 
 // EventSource的response
 let client;
@@ -39,5 +39,5 @@ app.get('*', function (req, res) {
 
 app.listen(config.port, () => {
   // 打开浏览器
-  require('opn')(`http://localhost:${config.port}`);
+  require('open')(`http://localhost:${config.port}`);
 });

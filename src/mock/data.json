@@ -2,10 +2,10 @@
   "/hello/{name}": {
     "get": {
       "params": {
-        "name": "ea exercitation nisi velit in"
+        "name": "officia in qui mag"
       },
       "response": {
-        "text": "dolore voluptate anim cupidatat"
+        "text": "nulla laboris"
       }
     }
   }

@@ -9,7 +9,7 @@ const modelPath = path.resolve(config.srcPath, 'interface/model');
 const apiPath = path.resolve(config.srcPath, 'interface/api');
 
 
-function mock() {
+function watchMock() {
   genMock();
   chokidar.watch([modelPath, apiPath], { ignoreInitial: true }).on('all', (t, p) => {
     genMock();
@@ -24,4 +24,7 @@ async function genMock() {
   fs.writeFileSync(path.resolve(config.srcPath, 'mock/data.json'), JSON.stringify(IApi, null, 2));
 }
 
-module.exports = mock;
+module.exports = {
+  genMock,
+  watchMock
+};

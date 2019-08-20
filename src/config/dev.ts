@@ -3,5 +3,5 @@
  */
 
 export const devConfig = {
-  //
+  mock: true
 };

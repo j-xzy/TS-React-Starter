@@ -3,5 +3,5 @@
  */
 
 export const prodConfig = {
-  //
+  mock: false
 };

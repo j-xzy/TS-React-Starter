@@ -7,8 +7,7 @@ import { prodConfig } from './prod';
 
 export const config = {
   ...process.env.NODE_ENV === 'production' ? prodConfig : devConfig,
-  host: '',
-  mock: true
+  host: ''
 };
 
 window.config = config;

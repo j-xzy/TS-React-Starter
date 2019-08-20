@@ -7,3 +7,4 @@ yarn.lock
 *.tgz
 .idea/
 coverage
+/src/mock/data.json
