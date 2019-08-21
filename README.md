@@ -85,6 +85,10 @@ export const config = {
 
 [更多Mock详情查看](https://github.com/whj1995/ts-faker/tree/master/test)
 
+## Rxjs版
+
+https://github.com/whj1995/TS-Rx-React-Starter
+
 ## 例子
 
 https://github.com/whj1995/ts-react-demo
