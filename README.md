@@ -54,15 +54,24 @@ interface IApi {
 
 2. 发起请求
 
-此时*window.Get*方法自动约束了*hello/{name}*接口，包括url地址、请求参数、Response等
+此时*window.Get*方法自动约束了 hello/{name} 接口
 
-![](https://raw.githubusercontent.com/whj1995/images-host/master/%E6%89%B9%E6%B3%A8%202019-08-07%20104712.png)
+地址被约束：
 
-![](https://raw.githubusercontent.com/whj1995/images-host/master/%E6%89%B9%E6%B3%A8%202019-08-07%20104941.png)
+![](https://raw.githubusercontent.com/whj1995/images-host/master/ts-temp-url.gif)
+
+请求参数被约束：
+
+![](https://raw.githubusercontent.com/whj1995/images-host/master/ts-temp-params.gif)
+
+Response被约束：
+
+![](https://raw.githubusercontent.com/whj1995/images-host/master/ts-temp-response.gif)
+
 
 ### 如何无痛感的Mock数据
 
-接上例
+接口定义完成之后，将 *config.mock* 设置为 *true*：
 
 ``` ts
 // src/config/index.ts
