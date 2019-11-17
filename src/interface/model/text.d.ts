@@ -1,6 +1,6 @@
 declare namespace IModel {
   /**
-   * 用户信息
+   * 文本
    */
   interface IText {
     text: string;

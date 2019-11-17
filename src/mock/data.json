@@ -1,12 +1,7 @@
 {
   "/hello/{name}": {
     "get": {
-      "params": {
-        "name": "officia in qui mag"
-      },
-      "response": {
-        "text": "nulla laboris"
-      }
+      "text": "culpa"
     }
   }
 }

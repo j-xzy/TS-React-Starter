@@ -17,9 +17,9 @@ export async function Delete<T extends IAjaxUtil.IDeleteUrl>(urlPattern: T, para
 export async function adFetch<T>(urlPattern: string, method: IAjaxUtil.IHttpMethod, params: any): Promise<T> {
   if (window.config.mock) {
     const { default: mockData }: any = await import('@/mock/data.json');
-    if (mockData[urlPattern] && mockData[urlPattern][method] && mockData[urlPattern][method].response) {
+    if (mockData[urlPattern] && mockData[urlPattern][method] && mockData[urlPattern][method]) {
       return await new Promise((resolve) => {
-        resolve(mockData[urlPattern][method].response);
+        resolve(mockData[urlPattern][method]);
       });
     }
   }
