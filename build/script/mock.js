@@ -8,7 +8,6 @@ const config = require('../config');
 const modelPath = path.resolve(config.srcPath, 'interface/model');
 const apiPath = path.resolve(config.srcPath, 'interface/api');
 
-
 function watchMock() {
   genMock();
   chokidar.watch([modelPath, apiPath], { ignoreInitial: true }).on('all', (t, p) => {
